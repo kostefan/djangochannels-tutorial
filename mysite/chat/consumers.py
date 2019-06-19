@@ -20,7 +20,7 @@ class ChatConsumer(WebsocketConsumer):
         author = data['from']
         author_user = User.objects.filter(username=author)[0]
         message = Message.objects.create(
-            author = author_user
+            author = author_user,
             content = data['message'])
         content = {
             'command': 'new_message',
