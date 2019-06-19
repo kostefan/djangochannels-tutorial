@@ -12,8 +12,7 @@
 </body>
 <!-- <script src ="{% static 'reconnecting-websocket.js' %"></script> -->
 <script>
-
-    var chatSocket = new ReconnectingWebSocket(    var roomName = {{ room_name_json }};
+    var roomName = {{ room_name_json }};
 
     // var chatSocket = new ReconnectingWebSocket(
     var chatSocket = new WebSocket(
