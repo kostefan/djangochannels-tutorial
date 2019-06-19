@@ -12,17 +12,15 @@ class ChatConsumer(WebsocketConsumer):
             'messages': self.messages_to_json(messages)
         }
         self.send_chat_message(content)
-        pass
 
     def new_message(self, data):
         message = Message.objects.create(
-        content = data['message'])
+            content = data['message'])
         content = {
             'command': 'new_message',
             'message': self.message_to_json(message)
         }
         return self.send_chat_message(content)
-        pass
 
     def messages_to_json(self, messages):
         result = []
