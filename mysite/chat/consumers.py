@@ -15,8 +15,8 @@ class ChatConsumer(WebsocketConsumer):
         pass
 
     def new_message(self, data):
-        message = Message.objects.create)
-        content=data['message'])
+        message = Message.objects.create(
+        content = data['message'])
         content = {
             'command': 'new_message',
             'message': self.message_to_json(message)
